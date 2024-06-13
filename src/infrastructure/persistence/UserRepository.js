@@ -17,6 +17,9 @@ class UserRepository extends IUserRepository {
             where: { id: user.id },
             returning: true
         });
+        if (rowsUpdated === 0) {
+            throw new Error('Usuário não encontrado');
+        }
         return updatedUser;
     }
 
