@@ -3,17 +3,17 @@ const nodemailer = require('nodemailer');
 class EmailService {
     constructor() {
         this.transporter = nodemailer.createTransport({
-            service: 'Gmail',
+            service: 'hotmail',
             auth: {
-                user: 'seuemail@gmail.com',
-                pass: 'suasenha'
+                user: 'seuemailaqui@hotmail.com',
+                pass: 'seu password aqui'
             }
         });
     }
 
     async sendEmail(to, subject, text) {
         const mailOptions = {
-            from: 'seuemail@gmail.com',
+            from: 'seuemailaqui@hotmail.com',
             to,
             subject,
             text

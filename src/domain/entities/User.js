@@ -6,8 +6,7 @@ class User {
     }
 
     isValid() {
-        // Adicione validações de usuário aqui
-        return this.name && this.email;
+        return this.id && this.name && this.email;
     }
 }
 

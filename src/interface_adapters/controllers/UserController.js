@@ -33,6 +33,9 @@ class UserController {
     async updateUser(req, res) {
         try {
             const userDto = req.body;
+            if (!userDto.id) {
+                throw new Error('ID do usuário é necessário');
+            }
             const user = await this.updateUserUseCase.execute(userDto);
             res.status(200).json(user);
         } catch (error) {
